@@ -6,9 +6,11 @@ authors = [
     {name = "JVitoroliv3ira",email = "jvitoroliveira0711@gmail.com"}
 ]
 readme = "../README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.10,<4.0"
 license = { text = "GPL-3.0-or-later" }
 dependencies = [
+    "expression (>=5.6.0,<6.0.0)",
+    "typer (>=0.17.3,<0.18.0)"
 ]
 
 [tool.poetry]
@@ -18,3 +20,7 @@ packages = [{include = "etlab_cli", from = "src"}]
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+etlab = "etlab_cli.cli:app"
+
